@@ -1,0 +1,437 @@
+@font-face {
+    font-family: "Aller_Rg";
+    src: url("./assets/fonts/Aller_Rg.ttf");
+}
+
+@font-face {
+    font-family: "CooperHewitt-Book";
+    src: url("./assets/fonts/CooperHewitt-Book.otf");
+}
+
+@font-face {
+    font-family: "CooperHewitt-Light";
+    src: url("./assets/fonts/CooperHewitt-Light.otf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Aller_Rg";
+    background-color: #E4E3E2;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    line-height : 1.5;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ctn-header {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191716;
+    max-width: 100%;
+    padding: 8px 12px;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu span {
+    color: #807e7d;
+    font-size: 8px;
+    padding: 0;
+}
+
+#btn-menu {
+    cursor: pointer;
+    width: 36px;
+    height: auto;
+}
+
+.nav-mobile {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #191716;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 16px;
+    margin: 0;
+}
+
+.nav-mobile li {
+    margin: 16px 24px;
+    margin-bottom: 0;
+    width: initial;
+}
+
+.nav-mobile a {
+    font-size: 12px;
+}
+
+.nav-desktop {
+    display: none;
+}
+
+.ctn-us {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    justify-content: flex-end;
+}
+
+.us {
+    background-color: #A50000;
+    color: white;
+    padding: 40px 12px 8px 12px;
+}
+
+nav {
+    display: none;
+    list-style: none;
+    margin: 2px;
+}
+
+.nav-desktop ul {
+    padding-left: 0;
+    width: 50%;
+}
+
+nav li,
+nav a {
+    transition: all .3s;
+}
+
+nav li {
+    text-align: right;
+    padding: 2px;
+    border-bottom: 1px solid;
+}
+
+nav a {
+    font-size: 14px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-desktop li {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 50%, 100% 0);
+    min-width: 20ch;
+}
+
+.nav-desktop li:hover {
+    background-color: #A50000;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 95% 50%, 100% 0);
+}
+
+.nav-desktop li:hover a {
+    padding-right: 16px;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(4, 100%);
+    overflow-y: scroll;
+    scroll-snap-type: x mandatory;
+    height: 40vh;
+    margin: 2px 0;
+}
+
+.carousel .carousel-img {
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.twitter {
+    display: flex;
+    flex-direction: column;
+}
+
+.titre {
+    background-color: #211F1D;
+    color: white;
+    max-width: 100%;
+    margin: 0;
+    padding: 12px;
+}
+
+h1 {
+    position: relative;
+    font-family: "CooperHewitt-Book";
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h1::before {
+    content: "";
+    display: block;
+    background-image: url("./assets/icons/twitter.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 20px;
+    margin-right: 8px;
+}
+
+main ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0 16px;
+}
+
+main li {
+    font-size: 12px;
+    font-weight: 100;
+    border-bottom: 1px solid;
+    padding: 16px 20px;
+}
+
+main li:last-child {
+    border-bottom: none;
+}
+
+.bleu {
+    color: #3BA8DB;
+}
+
+footer {
+    max-width: 100%;
+}
+
+.ctn-mention {
+    background-color: #211F1D;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#mention {
+    font-size: 10px;
+    text-align: right;
+    color: #807e7d;;
+    margin: 0;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.ctn-popup {
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px)
+}
+
+.popup-mention {
+    text-align: justify;
+    background-color: white;
+    color: black;
+    width: 60%;
+    height: auto;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.4);
+}
+
+.popup-titre {
+    color: #A50000;
+    font-size: 16px;
+}
+
+#valider {
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: inherit;
+    padding: 4px 12px;
+    float: right;
+    cursor: pointer;
+    transition: all .4s;;
+}
+
+#valider:hover {
+    background-color: #A50000;
+    color: white;
+}
+
+
+ /* RESPONSIVE FOR DESKTOP */ 
+
+@media screen and (min-width: 1200px) {
+    
+    body {
+        padding: 0 10vw;
+    }
+
+    .container {
+        max-width: 1920px;
+        margin-inline: auto;
+    }
+    
+    header {
+        flex-direction: row;
+    }
+    
+    .ctn-header {
+        width: 50%;
+        padding: 60px 0;
+    }
+    
+    header img {
+        width: 50%;
+        margin: auto;
+    }
+
+    .nav-mobile {
+        display: none !important;
+    }
+    
+    .nav-desktop {   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 33%; 
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .ctn-us {
+        display: flex;
+    }
+    
+    nav {
+        display: flex;
+    }
+    
+    main {
+        flex-direction: row;
+    }
+    
+    .carousel {
+        width: 50%;
+        height: inherit;
+        max-height: inherit;
+    }
+
+    .carousel-img {
+        width: 100%;
+    }
+    
+    .twitter {
+        width: 50%;
+        margin-top: -45px;
+    }
+    
+    .titre {
+        display: flex;
+        justify-content: flex-end;
+        background-color: inherit;
+        border-bottom: 1px solid black;
+        color: black;
+        padding: 8px 0;
+        margin: 2px;
+    }
+    
+    h1 {
+        width: 66%;
+        min-width: 260px;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1::before {
+        position: absolute;
+        left: -32px;
+        width: 24px;
+        height: 24px;
+    }
+    
+    main ul {
+        align-items: flex-end;
+        padding: 0;
+    }
+    
+    main li {
+        width: 66%;
+        min-width: 260px;
+        padding: 16px 0;
+    }
+    
+    .ctn-mention {
+        width: 50%;
+    }
+    
+    .popup-mention p {
+        font-size: 14px;
+    }
+}
